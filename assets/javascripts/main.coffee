@@ -1,12 +1,28 @@
 app = angular.module('melbjs-preso', [])
 
-app.directive 'slide', ($compile) ->
+app.directive 'slide', ->
   restrict: 'E'
-  template: "<div class='slide' ng-transclude ng-show='id == currentSlide'></div>"
+  template: "<div class='slide' ng-transclude ng-show='isShown()'></div>"
   replace: true
   transclude: true
   scope: true
-  link: (scope, element, attrs) -> scope.id = attrs.id
+  link: (scope, element, attrs) ->
+    id = parseFloat attrs.id
+    scope.isShown = ->
+      Math.floor(id) == Math.floor(scope.currentSlide)
+
+app.directive 'step', ->
+  restrict: 'A'
+  template: "<div ng-transclude ng-style='isVisible()'></div>"
+  transclude: true
+  scope: true
+  link: (scope, element, attrs) ->
+    id = parseFloat attrs.step
+    scope.isVisible = ->
+      visibility: if Math.floor(id) == Math.floor(scope.currentSlide) && id <= scope.currentSlide
+        'visible'
+      else
+        'hidden'
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}
@@ -18,8 +34,14 @@ app.service 'keyboard', ($rootScope, $document, $location) ->
   @on = (keyIdentifier, callback) ->
     bindings[keyIdentifier] = callback
 
-app.controller 'BodyController', ($scope, $routeParams, keyboard) ->
-  $scope.currentSlide = 1
+app.controller 'BodyController', ($scope, $location, keyboard) ->
+  setCurrentSlide = (nr) ->
+    $location.hash(nr)
+    $scope.currentSlide = nr
 
-  keyboard.on "Right", -> $scope.currentSlide += 1
-  keyboard.on "Left", -> $scope.currentSlide -= 1
+  setCurrentSlide(parseFloat($location.hash()) || 1)
+
+  keyboard.on "Right", -> setCurrentSlide(Math.floor($scope.currentSlide + 1))
+  keyboard.on "Left", -> setCurrentSlide(Math.floor($scope.currentSlide - 1))
+  keyboard.on "Down", -> setCurrentSlide($scope.currentSlide + 0.1)
+  keyboard.on "Up", -> setCurrentSlide($scope.currentSlide - 0.1)
