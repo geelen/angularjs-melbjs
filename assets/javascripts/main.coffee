@@ -12,17 +12,12 @@ app.directive 'slide', ->
       Math.floor(id) == Math.floor(scope.currentSlide)
 
 app.directive 'step', ->
-  restrict: 'A'
-  template: "<div ng-transclude ng-style='isVisible()'></div>"
-  transclude: true
-  scope: true
   link: (scope, element, attrs) ->
     id = parseFloat attrs.step
-    scope.isVisible = ->
-      visibility: if Math.floor(id) == Math.floor(scope.currentSlide) && id <= scope.currentSlide
-        'visible'
-      else
-        'hidden'
+
+    scope.$watch "currentSlide", ->
+      visibility = if Math.floor(id) == Math.floor(scope.currentSlide) && id <= scope.currentSlide then 'visible' else 'hidden'
+      element.css('visibility', visibility)
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}
