@@ -11,4 +11,14 @@ html(ng-app='melbjs-preso')
     script(src='/javascripts/vendor/angular.js')
     script(src='/javascripts/main.js')
 
-  body(ng-view)
+  body(ng-controller="BodyController")
+
+    slide#1
+      h1 BE A SUPERHERO
+      p.sub with
+      img(src='http://angularjs.org/img/AngularJS-large.png')
+
+    slide#2
+      h1 Angular
+      p.sub is good
+

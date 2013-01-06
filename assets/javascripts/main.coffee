@@ -1,22 +1,25 @@
 app = angular.module('melbjs-preso', [])
 
-app.config ($routeProvider) -> $routeProvider
-  .when('/:slideNr', controller: 'BodyController', template: "<div id='stage' ng-include='currentSlide()'>")
-  .otherwise(redirectTo: '/1')
+app.directive 'slide', ($compile) ->
+  restrict: 'E'
+  template: "<div class='slide' ng-transclude ng-show='id == currentSlide'></div>"
+  replace: true
+  transclude: true
+  scope: true
+  link: (scope, element, attrs) -> scope.id = attrs.id
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}
 
   $document.bind 'keydown', (k) ->
-    if path = bindings[k.keyIdentifier]
-      $rootScope.$apply $location.path(path).replace()
+    if callback = bindings[k.keyIdentifier]
+      $rootScope.$apply callback
 
-  @changePathOn = (keyIdentifier, callback) ->
+  @on = (keyIdentifier, callback) ->
     bindings[keyIdentifier] = callback
 
 app.controller 'BodyController', ($scope, $routeParams, keyboard) ->
-  slideNr = parseInt($routeParams.slideNr)
-  $scope.currentSlide = -> "/slides/#{slideNr}.html"
+  $scope.currentSlide = 1
 
-  keyboard.changePathOn "Right", "/#{slideNr + 1}"
-  keyboard.changePathOn "Left", "/#{slideNr - 1}"
+  keyboard.on "Right", -> $scope.currentSlide += 1
+  keyboard.on "Left", -> $scope.currentSlide -= 1
