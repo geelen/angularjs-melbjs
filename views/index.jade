@@ -1,6 +1,15 @@
-extends layout
+doctype 5
+html(ng-app='melbjs-preso')
+  head
+    title Mimosa
+    link(rel='stylesheet', href='/stylesheets/style.css' + cachebust)
 
-block content
+    if reload
+      script(src='/socket.io/socket.io.js')
+      script(src='/javascripts/reload-client.js')
 
-  h1 Welcome to Mimosa {{ something }}
+    script(src='/javascripts/vendor/angular.js')
+    script(src='/javascripts/main.js')
 
+  body(ng-controller='body')
+    #stage
