@@ -11,15 +11,4 @@ html(ng-app='melbjs-preso')
     script(src='/javascripts/vendor/angular.js')
     script(src='/javascripts/main.js')
 
-  body
-    #stage(ng-view)
-
-    script#slide1(type='text/ng-template')
-      .slide
-        h1 BE A SUPERHERO
-        p.sub with
-        img(src='http://angularjs.org/img/AngularJS-large.png')
-
-    script#slide2(type='text/ng-template')
-      .slide
-        h1 WAT
+  body(ng-view)
