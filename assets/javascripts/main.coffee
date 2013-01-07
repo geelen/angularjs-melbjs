@@ -31,7 +31,7 @@ app.service 'keyboard', ($rootScope, $document, $location) ->
 
 app.controller 'BodyController', ($scope, $location, keyboard) ->
   setCurrentSlide = (nr) ->
-    $location.hash(nr)
+    $location.hash(nr.toFixed(1))
     $scope.currentSlide = nr
 
   setCurrentSlide(parseFloat($location.hash()) || 1)
