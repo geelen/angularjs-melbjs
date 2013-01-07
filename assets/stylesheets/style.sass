@@ -18,6 +18,14 @@ body
   -webkit-box-pack: center
 
 $slideWidth: 960px
+$dark: rgb(58, 53, 32)
+
+
+@mixin lato
+  font: 300 32px Lato
+  line-height: 1.5
+  color: #666
+
 #stage
   width: $slideWidth
   height: 640px
@@ -44,11 +52,6 @@ p.sub
 ul
   text-align: left
 
-@mixin lato
-  font: 300 32px Lato
-  line-height: 1.5
-  color: #666
-
 li
   +lato
   display: block
@@ -65,20 +68,21 @@ table
 
   td
     +lato
-    padding: 10px 20px
+    padding: 10px
 
 thead
-  background-color: rgba(58, 53, 32, 0.9)
   td
+    background-color: rgba($dark, 0.9)
     color: #bbb
     font-size: 32px
+    padding: 10px 20px
     strong
       display: block
       color: #ccc
 
 tbody
   td
-    border-bottom: 1px solid rgba(58, 53, 32, 0.32)
+    border-bottom: 1px solid rgba($dark, 0.32)
     &:first-child
       font-weight: 400
 
