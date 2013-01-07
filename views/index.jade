@@ -2,8 +2,8 @@ doctype 5
 html(ng-app='melbjs-preso')
   head
     title Mimosa
-    link(rel='stylesheet', href='/stylesheets/style.css' + cachebust)
     link(rel='stylesheet', href='/stylesheets/vendor/solarized-light.css')
+    link(rel='stylesheet', href='/stylesheets/style.css' + cachebust)
 
     if reload
       script(src='/socket.io/socket.io.js')
@@ -142,4 +142,4 @@ html(ng-app='melbjs-preso')
     slide#11
       h1 NO JS NO PROBLEMS
       p.sub This is a whole app!
-      snippet(lang='html', file='ex1.html')
+      snippet(lang='html', file='examples/1.html')

@@ -21,11 +21,13 @@ app.directive 'step', ->
 
 app.directive 'snippet', ($http) ->
   restrict: 'E'
-  template: "<pre><code data-language='{{lang}}'>{{content}}</code></pre>"
+  template: "<pre><code data-language='{{lang}}'>{{content}}</code></pre><a class='sample' href='{{file}}' target='_blank'>{{file}}</a>"
   scope: true
   link: (scope, element, attrs) ->
     scope.lang = attrs.lang
-    scope.content = $http.get(attrs.file)
+    scope.file = attrs.file
+    $http.get(scope.file).success (data) ->
+      scope.content = data
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}

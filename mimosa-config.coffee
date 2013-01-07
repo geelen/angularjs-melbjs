@@ -89,11 +89,12 @@ exports.config = {
                                  # an enriched mimosa-config object
     port: 3001                 # port to start server on
     # base: ''                   # base of url for the app, if altered should start with a slash
-    # views:                     # configuration for the view layer of your application
+    views:                     # configuration for the view layer of your application
       # compileWith: 'jade'      # Other valid options: "hogan", "html", "ejs". The compiler for
                                  # your views.
       # extension: 'jade'        # extension of your server views
       # path: 'views'            # path from the root of your project to your views
+      pretty: true
 
   # require:                 # configuration for requirejs options.
     # verify:                # settings for requirejs path verification
