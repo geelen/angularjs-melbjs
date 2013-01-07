@@ -19,6 +19,14 @@ app.directive 'step', ->
       visibility = if Math.floor(id) == Math.floor(scope.currentSlide) && id <= scope.currentSlide then 'visible' else 'hidden'
       element.css('visibility', visibility)
 
+app.directive 'snippet', ($http) ->
+  restrict: 'E'
+  template: "<pre><code data-language='{{lang}}'>{{content}}</code></pre>"
+  scope: true
+  link: (scope, element, attrs) ->
+    scope.lang = attrs.lang
+    scope.content = $http.get(attrs.file)
+
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}
 

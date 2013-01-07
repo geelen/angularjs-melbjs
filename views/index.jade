@@ -3,6 +3,7 @@ html(ng-app='melbjs-preso')
   head
     title Mimosa
     link(rel='stylesheet', href='/stylesheets/style.css' + cachebust)
+    link(rel='stylesheet', href='/stylesheets/vendor/solarized-light.css')
 
     if reload
       script(src='/socket.io/socket.io.js')
@@ -10,6 +11,7 @@ html(ng-app='melbjs-preso')
 
     script(src='/javascripts/vendor/angular.js')
     script(src='/javascripts/main.js')
+    script(src='/javascripts/vendor/rainbow-custom.min.js')
 
   body(ng-controller="BodyController")
 
@@ -115,4 +117,29 @@ html(ng-app='melbjs-preso')
           strong maintainable
           |  for large apps
 
-      p.footer But I can only talk about the first two today
+      p.footer(step='9.1') But I can only talk about the first two today
+
+    slide#10
+      h1 Components
+      ul
+        li
+          .status(step='10.1') ✔
+          strong HTML
+          |  is your templating language
+        li
+          .status(step='10.1') ✖
+          strong Directives
+          |  define reusable components of behaviour
+        li
+          .status(step='10.1') ✔
+          strong Controllers
+          |  don't touch the DOM
+        li
+          .status(step='10.1') ✖
+          strong Services
+          |  help structure your app
+
+    slide#11
+      h1 NO JS NO PROBLEMS
+      p.sub This is a whole app!
+      snippet(lang='html', file='ex1.html')
