@@ -17,8 +17,9 @@ body
   -webkit-box-align: center
   -webkit-box-pack: center
 
+$slideWidth: 960px
 #stage
-  width: 960px
+  width: $slideWidth
   height: 640px
   padding: 20px 30px
   display: -webkit-box
@@ -32,7 +33,7 @@ body
 
 h1
   font-family: Montserrat
-  text-shadow: 0 1px 0 rgba(white, 0.2), 0 5px 40px rgba(black, 0.3)
+  text-shadow: 0 1px 0 rgba(white, 0.2), -3px 5px 4px rgba(black, 0.1), 3px 5px 4px rgba(black, 0.1)
   font-size: 3.77em
   text-transform: uppercase
 
@@ -44,15 +45,15 @@ ul
   text-align: left
 
 @mixin lato
-  font: 300 22px Lato
+  font: 300 32px Lato
   line-height: 1.5
   color: #666
 
 li
   +lato
   display: block
-  font-size: 36px
-  text-shadow: 0 1px 0 rgba(white, 0.5), 0 0 20px rgba(black, 0.3)
+  padding: 10px
+  border-left: 5px solid rgba(58, 53, 32, 0.9)
 
 strong
   font-weight: 400
@@ -78,3 +79,8 @@ thead
 tbody
   td
     border-bottom: 1px solid rgba(58, 53, 32, 0.32)
+    &:first-child
+      font-weight: 400
+
+img.big
+  width: $slideWidth
