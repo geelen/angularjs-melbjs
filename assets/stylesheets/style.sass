@@ -35,7 +35,7 @@ $slidePadding: 20px
   -webkit-box-orient: horizontal
   -webkit-box-align: center
   -webkit-box-pack: center
-  background-color: rgba(black, 0.02)
+  //background-color: rgba(black, 0.02)
 
 .slide
   text-align: center
@@ -55,15 +55,23 @@ p.sub
   font: normal 32px Allura
   color: #777
 
-footer
+footer, .profile
   +lato
   font-weight: 400
   font-size: 14px
+  text-align: center
+
+footer
   position: absolute
   bottom: 20px
   left: 0
   width: 100%
-  text-align: center
+
+.profile
+  img
+    margin-top: 10px
+    border-radius: 36px
+    box-shadow: 0 0 1px 1px #AAA, 0 0 2px 3px rgba(black, 0.5)
 
 ul
   text-align: left
@@ -111,11 +119,6 @@ img.poster, pre
   box-shadow: 0 0 1px rgba($dark, 1), 0 0 0px 8px white, 0 0 0px 9px rgba($dark, 0.1), 10px 10px 20px 3px rgba(black, 0.2), -10px 10px 20px 3px rgba(black, 0.2)
   margin: 30px
 
-img.profile
-  margin-top: 20px
-  border-radius: 36px
-  box-shadow: 0 0 1px 1px #AAA, 0 0 2px 3px rgba(black, 0.5)
-
 pre
   text-align: left
 
@@ -131,3 +134,8 @@ a
 
 iframe
   width: 90%
+
+.one-more-thing
+  border-top: 4px solid $dark
+  margin-top: 20px
+  padding-top: 20px
