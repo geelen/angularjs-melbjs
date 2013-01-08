@@ -129,6 +129,10 @@ html(ng-app='melbjs-preso')
           strong HTML
           |  is your templating language
         li
+          .status(step='10.1') ✔
+          strong Two-way data binding
+          |  updates the DOM
+        li
           .status(step='10.1') ✖
           strong Directives
           |  define reusable components of behaviour
@@ -145,3 +149,14 @@ html(ng-app='melbjs-preso')
       h1 NO JS NO PROBLEMS
       p.sub This is a whole app!
       snippet(lang='html', file='examples/1.html')
+      iframe(src='examples/1.html', step='11.1')
+
+    slide#12
+      h1 Data binding
+      p.sub Still no code!
+      snippet(lang='html', file='examples/2.html')
+      iframe(src='examples/2.html', step='12.1')
+
+    slide#13
+      h1 Structure
+      img.poster(src='/images/angularjs-structure.png')
