@@ -21,9 +21,8 @@ app.directive 'step', ->
 
 app.directive 'snippet', ($http) ->
   restrict: 'E'
-  template: "
-    <pre><code data-language='{{lang}}'>{{content}}</code></pre>
-  "
+  replace: true
+  template: "<pre><code data-language='{{lang}}'>{{content}}</code></pre>"
   scope: true
   link: (scope, element, attrs) ->
     scope.lang = attrs.lang
@@ -31,15 +30,6 @@ app.directive 'snippet', ($http) ->
     scope.iframeVisibility = -> visibility: if scope.iframeShown then 'visible' else 'hidden'
     $http.get(scope.file).success (data) ->
       scope.content = data
-
-app.directive "updateFrom", ->
-  restrict: "A"
-  link: (scope, element, attrs) ->
-    doc = element[0].contentWindow.document
-    scope.$watch attrs.updateFrom, (val) ->
-      doc.open()
-      doc.write(val)
-      doc.close()
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}

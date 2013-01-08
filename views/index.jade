@@ -14,149 +14,189 @@ html(ng-app='melbjs-preso')
     script(src='/javascripts/vendor/rainbow-custom.min.js')
 
   body(ng-controller="BodyController")
+    #stage
+      slide#1
+        h1 BE A SUPERHERO
+        p.sub with
+        img(src='http://angularjs.org/img/AngularJS-large.png')
+        footer
+          p.sub by
+          img.profile(src='https://twimg0-a.akamaihd.net/profile_images/1120044480/me_bigger.jpg')
+          p Glen Maddern
+          a(href='http://twitter.com/glenmaddern') @glenmaddern
+          |  |
+          a(href='http://goodfil.ms')  http://goodfil.ms
+          |  |
+          a(href='mailto://glen@goodfil.ms')  glen@goodfil.ms
 
-    slide#1
-      h1 BE A SUPERHERO
-      p.sub with
-      img(src='http://angularjs.org/img/AngularJS-large.png')
+      slide#2
+        h1 Angular
+        p.sub is
+        ul
+          li(step='2.1')
+            | a
+            strong  framework
+            |  for building web applications
+          li(step='2.2') at
+            strong  v1.0.3
+            | , backed by Google
+          li(step='2.3') an
+            strong  alternative
+            |  to Backbone/Ember
+          li(step='2.4') an
+            strong  alternative
+            |  to jQuery
 
-    slide#2
-      h1 Angular
-      p.sub is
-      ul
-        li(step='2.1')
-          | a
-          strong  framework
-          |  for building web applications
-        li(step='2.2') an
-          strong  alternative
-          |  to Backbone/Ember
-        li(step='2.3') at
-          strong  v1.0.3
-          | , backed by Google
+      slide#3
+        h1 Score card
+        p.sub warning: opinions!
+        table
+          thead
+            tr
+              td
+              td
+                strong Solves
+                span.nowrap a problem well
+              td
+                strong Fast
+                span.nowrap for small sites
+              td
+                strong Maintainable
+                span.nowrap for large sites
+          tbody
+            tr(step='3.1')
+              td jQuery
+              td ✔
+              td ✔
+              td ✖
+              td(step='3.6') PHP
+            tr(step='3.2')
+              td GWT
+              td ✖
+              td ✖
+              td ?
+              td(step='3.6') CF
+            tr(step='3.3')
+              td BackboneJS
+              td ?
+              td ✖
+              td ✖
+              td(step='3.6') Java
+            tr(step='3.4')
+              td EmberJS
+              td ?
+              td ✖
+              td ✔
+              td(step='3.6') .NET
+            tr(step='3.5')
+              td AngularJS
+              td ✔
+              td ✔
+              td ✔
+              td(step='3.6') Rails
+      slide#4
+        h1 Learning Angular
+        p.sub has 3 phases
 
-    slide#3
-      h1 Score card
-      p.sub Warning: opinions!
-      table
-        thead
-          tr
-            td
-            td
-              strong Solves
-              span.nowrap a problem well
-            td
-              strong Fast
-              span.nowrap for small sites
-            td
-              strong Maintainable
-              span.nowrap for large sites
-        tbody
-          tr(step='3.1')
-            td jQuery
-            td ✔
-            td ✔
-            td ✖
-            td(step='3.6') PHP
-          tr(step='3.2')
-            td GWT
-            td ✖
-            td ✖
-            td ?
-            td(step='3.6') CF
-          tr(step='3.3')
-            td BackboneJS
-            td ?
-            td ✖
-            td ✖
-            td(step='3.6') Java
-          tr(step='3.4')
-            td EmberJS
-            td ?
-            td ✖
-            td ✔
-            td(step='3.6') .NET
-          tr(step='3.5')
-            td AngularJS
-            td ✔
-            td ✔
-            td ✔
-            td(step='3.6') Rails
-    slide#4
-      h1 Learning Angular
-      p.sub has 3 phases
+      slide#5
+        img.big(src='http://2.bp.blogspot.com/-q5aZsORjuwY/T1cJj5FZWWI/AAAAAAAAAOw/EkdsgmMb1FA/s1600/tumblr_lw4m1p8G5J1qzzh6g.jpg')
+        h1 WHOA
 
-    slide#5
-      img.big(src='http://2.bp.blogspot.com/-q5aZsORjuwY/T1cJj5FZWWI/AAAAAAAAAOw/EkdsgmMb1FA/s1600/tumblr_lw4m1p8G5J1qzzh6g.jpg')
-      h1 WHOA
+      slide#6
+        img.big(src='http://www.thinkgeek.com/images/blog/khaaaan.jpg')
+        h1 ANGULAAARRRR
 
-    slide#6
-      img.big(src='http://www.thinkgeek.com/images/blog/khaaaan.jpg')
-      h1 ANGULAAARRRR
+      slide#7
+        img.big(src='http://media.npr.org/assets/img/2012/11/20/macklemore-thrift-shop-still_wide-7d4092008474938959d2a80d3216271a0a15e65c-s6-c10.jpg')
+        h1 AWW HELL YEAH
 
-    slide#7
-      img.big(src='http://media.npr.org/assets/img/2012/11/20/macklemore-thrift-shop-still_wide-7d4092008474938959d2a80d3216271a0a15e65c-s6-c10.jpg')
-      h1 AWW HELL YEAH
+      slide#8
+        h1 OK
 
-    slide#8
-      h1 OK
+      slide#9
+        h1 Angular
+        ul
+          li
+            .status(step='9.1') ✔
+            strong solves
+            |  a problem well
 
-    slide#9
-      h1 Angular
-      p.sub is
-      ul
-        li
-          .status(step='9.1') ✔
-          | built for
-          strong  the web
+          li
+            .status(step='9.1') ✔
+            | is
+            strong  fast
+            |  for small apps
+          li
+            .status(step='9.1') ✖
+            | is
+            strong  maintainable
+            |  for large apps
 
-        li
-          .status(step='9.1') ✔
-          strong fast
-          |  for small apps
-        li
-          .status(step='9.1') ✖
-          strong maintainable
-          |  for large apps
+        p.footer(step='9.1') But I can only talk about the first two today
 
-      p.footer(step='9.1') But I can only talk about the first two today
+      slide#10
+        h1 Components
+        ul
+          li
+            .status(step='10.1') ✔
+            strong HTML
+            |  is your templating language
+          li
+            .status(step='10.1') ✔
+            strong Two-way data binding
+            |  updates the DOM
+          li
+            .status(step='10.1') ✖
+            strong Directives
+            |  define reusable components of behaviour
+          li
+            .status(step='10.1') ✔
+            strong Controllers
+            |  don't touch the DOM
+          li
+            .status(step='10.1') ✖
+            strong Services
+            |  help structure your app
+          li
+            .status(step='10.1') ✔
+            strong Dependency injection
+            |  wires it all together
 
-    slide#10
-      h1 Components
-      ul
-        li
-          .status(step='10.1') ✔
-          strong HTML
-          |  is your templating language
-        li
-          .status(step='10.1') ✔
-          strong Two-way data binding
-          |  updates the DOM
-        li
-          .status(step='10.1') ✖
-          strong Directives
-          |  define reusable components of behaviour
-        li
-          .status(step='10.1') ✔
-          strong Controllers
-          |  don't touch the DOM
-        li
-          .status(step='10.1') ✖
-          strong Services
-          |  help structure your app
+      slide#11
+        h1 NO JS NO PROBLEMS
+        p.sub This is a whole app!
+        snippet(lang='html', file='examples/1.html')
+        iframe(src='examples/1.html', step='11.1')
 
-    slide#11
-      h1 NO JS NO PROBLEMS
-      p.sub This is a whole app!
-      snippet(lang='html', file='examples/1.html')
-      iframe(src='examples/1.html', step='11.1')
+      slide#12
+        h1 Data binding
+        p.sub Still no code!
+        snippet(lang='html', file='examples/2.html')
+        iframe(src='examples/2.html', step='12.1')
 
-    slide#12
-      h1 Data binding
-      p.sub Still no code!
-      snippet(lang='html', file='examples/2.html')
-      iframe(src='examples/2.html', step='12.1')
+      slide#13
+        h2 Controllers
+        p.sub finally, some code!
+        ul
+          li Attached to certain sections of the DOM
+          li <code>function($scope, ...) { ... }</code>
+          li Should <strong>NEVER</strong> touch the DOM
+          li Instead, it sets values/methods on <code>$scope</code>
 
-    slide#13
-      h1 Structure
-      img.poster(src='/images/angularjs-structure.png')
+      slide#14
+        snippet(lang='html', file='examples/3.html')
+        iframe(src='examples/3.html', step='14.1')
+
+      slide#15
+        h2 $scope
+        ul
+          li This is your model layer
+          li It's a plain-old-javascript-object
+          li Change it and the DOM changes, like
+            strong  magic
+            sup *
+        footer * causes 90% of the 'WHOA' and 'ANGULAAARRRR' stages
+
+      slide#16
+        h1 Structure
+        img.poster(src='/images/angularjs-structure.png')

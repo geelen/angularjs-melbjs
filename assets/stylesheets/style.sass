@@ -19,43 +19,51 @@ body
 
 $slideWidth: 960px
 $dark: rgb(58, 53, 32)
-
+$slidePadding: 20px
 
 @mixin lato
-  font: 300 32px Lato
+  font: 300 28px Lato
   line-height: 1.5
   color: #666
 
 #stage
+  position: relative
   width: $slideWidth
   height: 640px
-  padding: 20px 30px
+  padding: $slidePadding
   display: -webkit-box
   -webkit-box-orient: horizontal
   -webkit-box-align: center
   -webkit-box-pack: center
-  box-shadow: 0 0 20px 10px rgba(black, 0.05)
+  background-color: rgba(black, 0.02)
 
 .slide
   text-align: center
-  max-width: $slideWidth
+  max-width: 100%
 
-h1
+h1, h2
   font-family: Montserrat
   text-shadow: 0 1px 0 rgba(white, 0.2), -3px 5px 4px rgba(black, 0.1), 3px 5px 4px rgba(black, 0.1)
   font-size: 3.77em
+h1
   text-transform: uppercase
+
+p
+  +lato
 
 p.sub
   font: normal 32px Allura
   color: #777
 
-p.footer
+footer
   +lato
+  font-weight: 400
+  font-size: 14px
+  position: absolute
+  bottom: 20px
+  left: 0
   width: 100%
-  border-top: solid 1px rgba($dark, 0.9)
-  margin-top: 50px
-  padding-top: 10px
+  text-align: center
 
 ul
   text-align: left
@@ -85,7 +93,6 @@ thead
   td
     background-color: rgba($dark, 0.9)
     color: #bbb
-    font-size: 32px
     padding: 10px 20px
     strong
       display: block
@@ -98,29 +105,29 @@ tbody
       font-weight: 400
 
 img.big
-  width: $slideWidth
+  width: $slideWidth - $slidePadding * 2
 
-img.poster
-  margin-top: 20px
+img.poster, pre
   box-shadow: 0 0 1px rgba($dark, 1), 0 0 0px 8px white, 0 0 0px 9px rgba($dark, 0.1), 10px 10px 20px 3px rgba(black, 0.2), -10px 10px 20px 3px rgba(black, 0.2)
+  margin: 30px
+
+img.profile
+  margin-top: 20px
+  border-radius: 36px
+  box-shadow: 0 0 1px 1px #AAA, 0 0 2px 3px rgba(black, 0.5)
 
 pre
   text-align: left
-  margin-bottom: 1px
 
 a
   text-decoration: none
   color: inherit
-
-a.sample
-  +lato
-  font-size: 18px
+  border-bottom: dotted 1px rgba($dark, 0.5)
   font-weight: 400
   color: $dark
-  border-bottom: dotted 1px $dark
 
 .nowrap
   white-space: nowrap
 
 iframe
-  width: 100%
+  width: 90%
