@@ -21,13 +21,27 @@ app.directive 'step', ->
 
 app.directive 'snippet', ($http) ->
   restrict: 'E'
-  template: "<pre><code data-language='{{lang}}'>{{content}}</code></pre><a class='sample' href='{{file}}' target='_blank'>{{file}}</a>"
+  template: "
+    <pre ng-click='editing = true' ng-hide='editing'><code data-language='{{lang}}'>{{content}}</code></pre>
+    <textarea ng-model='content' ng-show='editing'></textarea>
+    <div><a class='sample' href='{{file}}' target='_blank'>{{file}}</a></div>
+    <iframe update-from='content'></iframe>
+  "
   scope: true
   link: (scope, element, attrs) ->
     scope.lang = attrs.lang
     scope.file = attrs.file
     $http.get(scope.file).success (data) ->
       scope.content = data
+
+app.directive "updateFrom", ->
+  restrict: "A"
+  link: (scope, element, attrs) ->
+    doc = element[0].contentWindow.document
+    scope.$watch attrs.updateFrom, (val) ->
+      doc.open()
+      doc.write(val)
+      doc.close()
 
 app.service 'keyboard', ($rootScope, $document, $location) ->
   bindings = {}
