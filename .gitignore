@@ -19,9 +19,6 @@ what
 
 # Output folder
 /dist
-public/index.html
-public/javascripts
-public/stylesheets
 
 # Numerous always-ignore extensions
 *~
