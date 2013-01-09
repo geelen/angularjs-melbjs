@@ -19,9 +19,9 @@ html(ng-app='melbjs-preso')
         h1 BE A SUPERHERO
         p.sub with
         img(src='http://angularjs.org/img/AngularJS-large.png')
-        footer
+        footer.profile
           p.sub by
-          img.profile(src='https://twimg0-a.akamaihd.net/profile_images/1120044480/me_bigger.jpg')
+          .image
           p Glen Maddern
           a(href='http://twitter.com/glenmaddern') @glenmaddern
           |  |
@@ -73,31 +73,27 @@ html(ng-app='melbjs-preso')
               td ✔
               td ✔
               td ✖
-              td(step='3.6') PHP
             tr(step='3.2')
               td GWT
               td ✖
               td ✖
               td ?
-              td(step='3.6') CF
             tr(step='3.3')
               td BackboneJS
               td ?
               td ✖
               td ✖
-              td(step='3.6') Java
             tr(step='3.4')
               td EmberJS
               td ?
               td ✖
               td ✔
-              td(step='3.6') .NET
             tr(step='3.5')
               td AngularJS
               td ✔
               td ✔
               td ✔
-              td(step='3.6') Rails
+
       slide#4
         h1 Learning Angular
         p.sub has 3 phases
@@ -136,7 +132,7 @@ html(ng-app='melbjs-preso')
             strong  maintainable
             |  for large apps
 
-        p.footer(step='9.1') But I can only talk about the first two today
+        footer(step='9.1') ...but I can only talk about the first two today
 
       slide#10
         h1 Components
@@ -165,6 +161,7 @@ html(ng-app='melbjs-preso')
             .status(step='10.1') ✔
             strong Dependency injection
             |  wires it all together
+        footer(step='10.1') ...maybe next time?
 
       slide#11
         h1 NO JS NO PROBLEMS
@@ -235,7 +232,7 @@ html(ng-app='melbjs-preso')
         h1 Thank you!
         .profile
           p.sub I have been:
-          img(src='https://twimg0-a.akamaihd.net/profile_images/1120044480/me_bigger.jpg')
+          .image
           p Glen Maddern
           a(href='http://twitter.com/glenmaddern') @glenmaddern
             | |
